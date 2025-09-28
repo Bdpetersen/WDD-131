@@ -4,3 +4,7 @@ document.body.appendChild(newParagraph);
 const newSection = document.createElement("section");
 newSection.innerHTML = "<h2>DOM Basics</h2><p>This was added through Javascript</p>";
 document.body.appendChild(newSection);
+newImg = document.createElement("img");
+newImg.src = "https://picsum.photos/200";
+newImg.alt = "A random image from Picsum";
+document.body.appendChild(newImg);
