@@ -1,4 +1,4 @@
-body #content {
+body #container {
     font-family: 'Times New Roman';
     margin: 20px auto;
     border: gray;
@@ -16,6 +16,9 @@ h1, h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
     
+}
+header{
+    text-align: center;
 }
 h1 {
     font-weight: 500;
