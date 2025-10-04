@@ -1,0 +1,184 @@
+/*Global Reset and Base Styles (Mobile First)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/*Header (Mobile First)*/
+header {
+    background-color: #4b8bfc;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/*"Menu" Button (Visible on Mobile)*/
+.menu-toggle {
+    display: block;
+    border: none;
+    background-color: #4b8bfc;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px auto;
+}
+
+/*Navigation (Hidden on Mobile)*/
+.menu {
+    display: none; /* Hidden by default (mobile) */
+}
+/* When the button is clicked, this class will be added by JS */
+.menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Vertical for mobile menu */
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu ul li {
+    width: 100%;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.75rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #3a75d3;  
+}
+
+/*Main Content (Mobile First)*/
+main {
+    padding: 1rem;
+    background-color: #9eb2a5;
+}
+
+section.content {
+    text-align: center;
+}
+
+section.content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/*Image Gallery (Mobile First)*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 1rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+}
+
+.gallery figure {
+    width: 100%;
+}
+
+.gallery img {
+    width: 350px; /* Make image responsive within the grid column */
+    height: 350px; /* Fixed height to make it a square-ish shape */
+    object-fit: cover; /* Cover the area, cropping as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+    background-color: white;
+    }
+
+/*Footer*/
+footer {
+    text-align: center;
+    background-color: #4b8bfc;
+    padding: 1rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/*Responsive Styles*/
+
+/* Tablet View: 768px and up */
+@media screen and (min-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+    .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    section.content h2 {
+    font-size: 1.8rem;
+    }
+}
+
+/* Desktop View: 1000px and up */
+@media screen and (min-width: 1000px) {
+    .menu-toggle {
+    display: none; /* Hide button on desktop */
+    }
+
+    .menu {
+    display: flex; /* Show menu on desktop */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: center;
+    margin-top: 0;
+    }
+
+    .menu.active {
+        /* override active styles for desktop */
+        flex-direction: row;
+        width: auto;
+        margin-top: 0;
+  }
+
+  .menu ul {
+    flex-direction: row; /* Horizontal layout */
+    gap: 1.5rem;
+    width: auto;
+  }
+    
+  .menu ul li {
+      width: auto;
+  }
+
+  .menu ul li a {
+      padding: 0.5rem 1rem;
+  }
+
+  .menu ul li a:hover {
+      background-color: transparent;
+      color: #dceaff;
+  }
+    
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
