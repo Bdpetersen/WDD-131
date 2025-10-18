@@ -1,0 +1,268 @@
+/* Color Palette and Fonts */
+:root {
+    --color-gold: #EFC69B;
+    --color-red: #AF1B3F;
+    --color-dark: #473144;
+    --font-headline: 'Lora', Georgia, serif; /* Adjusted for better visual match */
+    --font-body: Helvetica, Arial, sans-serif;
+}
+
+/* Basic Reset and General Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: #fcfcfc; /* Slightly lighter for background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-headline);
+    color: var(--color-red);
+    font-weight: normal; /* Match lighter header font */
+}
+
+a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ccc; /* Subtle border for book covers */
+    margin-bottom: 10px; /* Space below image */
+}
+
+/* Accessibility: SR-only for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to Content Link */
+.skip-to-content a {
+    position: absolute;
+    top: -999px;
+    left: 0;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    padding: 10px 15px;
+    z-index: 1000;
+    font-weight: bold;
+}
+.skip-to-content a:focus {
+    top: 0;
+}
+
+/* Header Styling */
+.site-header {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem; /* Reduced padding to match image */
+}
+
+.site-title {
+    font-size: 3.5rem; /* Large font size for title */
+    margin: 0;
+    color: var(--color-dark);
+    letter-spacing: -0.02em; /* Tighter letter spacing */
+}
+
+.nav-container {
+    border-top: 1px solid var(--color-gold);
+    border-bottom: 1px solid var(--color-gold);
+    max-width: 900px; /* Slightly wider nav container */
+    margin: 2rem auto 0; /* Margin above and auto for centering */
+    padding: 0.3rem 0; /* Reduced vertical padding */
+}
+
+/* Grid 1: Navigation */
+.main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto); /* Pushes items to the right */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem; /* Increased gap between nav items */
+}
+.main-nav ul li:first-child {
+    display: none; /* Hide the empty list item for grid alignment */
+}
+.main-nav a {
+    font-size: 1.1rem;
+    font-weight: normal; /* Normal weight as in image */
+    font-family: var(--font-body); /* Body font for nav links */
+    color: var(--color-dark); /* Dark color for nav links */
+    padding: 0.5rem 0; /* Consistent padding */
+    white-space: nowrap; /* Prevent wrapping */
+}
+.main-nav a:hover {
+    color: var(--color-red);
+}
+
+/* Main Content Container */
+.container {
+    max-width: 900px; /* Match overall content width from image */
+    margin: 0 auto;
+    padding: 2rem 1.5rem; /* Consistent padding */
+}
+
+/* Grid 2: Main Body Layout */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Articles take 3 parts, sidebar 1 */
+    gap: 3rem; /* Spacing between main content and sidebar */
+}
+
+/* Grid 3: Article Layout */
+.article-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr; /* Date/Details on left, content on right */
+    gap: 1.5rem;
+    margin-bottom: 3rem; /* Spacing between articles */
+    border-bottom: 1px solid #eee; /* Light separator between articles */
+    padding-bottom: 3rem; /* Padding before separator */
+}
+.article-grid:last-of-type {
+    border-bottom: none; /* No separator for the last article */
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+.article-details {
+    text-align: right; /* Right-align text as in image */
+    font-size: 0.95rem; /* Slightly smaller font for details */
+    padding-right: 1rem; /* Space before content grid line */
+}
+
+.article-details time {
+    display: block;
+    font-size: 1rem; /* Specific font size for date */
+    font-weight: normal;
+    color: var(--color-dark); /* Date is dark in image */
+    margin-bottom: 0.3rem; /* Space below date */
+}
+
+.article-details .age-range,
+.article-details .category {
+    display: block;
+    margin-bottom: 0.3rem; /* Space below age range and category */
+    color: #555; /* Slightly lighter color for these details */
+}
+
+.article-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.7rem; /* Specific size for article titles */
+    line-height: 1.2;
+    color: var(--color-dark); /* Article titles are dark, not red, in the image */
+    text-underline-offset: 3px; /* Space between text and underline */
+}
+
+.article-content p {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.article-content .read-more {
+    color: var(--color-red); /* Read More link is red */
+    font-weight: bold;
+    text-decoration: underline; /* Underlined */
+    text-underline-offset: 2px;
+}
+.article-content .read-more:hover {
+    opacity: 0.8;
+}
+
+/* Star Ratings */
+.stars {
+    display: flex;
+    justify-content: flex-end; /* Align stars to the right */
+    margin-top: 0.5rem; /* Space above stars */
+}
+.star {
+    width: 14px; /* Size of star */
+    height: 14px;
+    background-color: #ccc; /* Unfilled star color */
+    margin-left: 2px;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    ); /* Star shape */
+}
+.star.filled {
+    background-color: var(--color-gold); /* Filled star color */
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+    padding: 1rem;
+    border: 1px solid var(--color-gold); /* Gold border for sidebar */
+    height: fit-content;
+    font-family: var(--font-headline); /* Sidebar heading in headline font */
+}
+.filter-sidebar h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--color-dark); /* Dark color for sidebar heading */
+}
+
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .site-title {
+        font-size: 2.5rem;
+    }
+
+    .main-nav ul {
+        grid-template-columns: repeat(3, 1fr); /* Evenly distribute nav items */
+        justify-items: center;
+        gap: 0; /* Remove gap for smaller screens */
+    }
+    .main-nav ul li:first-child {
+        display: none; /* Keep hidden */
+    }
+
+    .main-content-grid {
+        grid-template-columns: 1fr; /* Stack main content and sidebar */
+        gap: 2rem;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr; /* Stack article details and content */
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .article-details {
+        text-align: left; /* Align left on mobile */
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #eee; /* Separator below details on mobile */
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    .stars {
+        justify-content: flex-start; /* Align stars left on mobile */
+    }
+
+    .filter-sidebar {
+        margin-top: 2rem; /* Add space above sidebar when stacked */
+    }
+}
+
