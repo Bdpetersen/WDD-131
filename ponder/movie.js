@@ -42,7 +42,7 @@ const movies = [
 ];
 
 // Get the container element from the DOM
-const movieContainer = document.querySelector('#movie-container');
+const movieContainer = document.querySelector('#movie-list');
 
 movies.forEach(movie => {
     // 1. Create a "card" element to hold all the info for one movie

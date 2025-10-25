@@ -25,23 +25,23 @@ header, footer {
 #movie-list {
     padding: 0 2rem;
 }
-.movie {
+#movie-list {
     border: 2px solid #ccc;
     padding: 1rem;
     border-radius: 10px;
     max-width: 700px;
     margin: 20px auto;
 }
-.movie h2 {
+#movie-list h2 {
     color: #b30059;
     font-size: 1.5rem;
     text-align: center;
     margin: 20px;
 }
-.movie p {
+#movie-list p {
     padding-left: 20px;
 }
-.movie img {
+#movie-list img {
     max-width: 100%;
     display: block;
     border-radius: 8px;
