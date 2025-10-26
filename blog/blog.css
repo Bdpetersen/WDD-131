@@ -1,9 +1,11 @@
+/* WDD 131 • blog.css */
+
 /* Color Palette and Fonts */
 :root {
     --color-gold: #EFC69B;
     --color-red: #AF1B3F;
     --color-dark: #473144;
-    --font-headline: 'Lora', Georgia, serif; /* Adjusted for better visual match */
+    --font-headline: 'Lora', Georgia, serif;
     --font-body: Helvetica, Arial, sans-serif;
 }
 
@@ -15,7 +17,7 @@
 body {
     font-family: var(--font-body);
     color: var(--color-dark);
-    background-color: #fcfcfc; /* Slightly lighter for background */
+    background-color: #fcfcfc;
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -24,7 +26,7 @@ body {
 h1, h2, h3 {
     font-family: var(--font-headline);
     color: var(--color-red);
-    font-weight: normal; /* Match lighter header font */
+    font-weight: normal;
 }
 
 a {
@@ -36,8 +38,6 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    border: 1px solid #ccc; /* Subtle border for book covers */
-    margin-bottom: 10px; /* Space below image */
 }
 
 /* Accessibility: SR-only for screen readers */
@@ -72,156 +72,121 @@ img {
 .site-header {
     text-align: center;
     padding-top: 2rem;
-    padding-bottom: 0.5rem; /* Reduced padding to match image */
+    padding-bottom: 0.5rem;
 }
 
 .site-title {
-    font-size: 3.5rem; /* Large font size for title */
+    font-size: 3.5rem;
     margin: 0;
     color: var(--color-dark);
-    letter-spacing: -0.02em; /* Tighter letter spacing */
+    letter-spacing: -0.02em;
 }
 
 .nav-container {
     border-top: 1px solid var(--color-gold);
     border-bottom: 1px solid var(--color-gold);
-    max-width: 900px; /* Slightly wider nav container */
-    margin: 2rem auto 0; /* Margin above and auto for centering */
-    padding: 0.3rem 0; /* Reduced vertical padding */
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0.3rem 0;
 }
 
-/* Grid 1: Navigation */
 .main-nav ul {
     display: grid;
-    grid-template-columns: 1fr repeat(3, auto); /* Pushes items to the right */
+    grid-template-columns: 1fr repeat(3, auto);
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 2rem; /* Increased gap between nav items */
+    gap: 2rem;
 }
-.main-nav ul li:first-child {
-    display: none; /* Hide the empty list item for grid alignment */
-}
+
 .main-nav a {
     font-size: 1.1rem;
-    font-weight: normal; /* Normal weight as in image */
-    font-family: var(--font-body); /* Body font for nav links */
-    color: var(--color-dark); /* Dark color for nav links */
-    padding: 0.5rem 0; /* Consistent padding */
-    white-space: nowrap; /* Prevent wrapping */
+    color: var(--color-dark);
+    padding: 0.5rem 0;
+    white-space: nowrap;
 }
 .main-nav a:hover {
     color: var(--color-red);
 }
 
 /* Main Content Container */
-.container {
-    max-width: 900px; /* Match overall content width from image */
+main {
+    max-width: 900px; /* NEW: Set max-width to align with header */
     margin: 0 auto;
-    padding: 2rem 1.5rem; /* Consistent padding */
+    padding: 2rem 1.5rem;
 }
 
-/* Grid 2: Main Body Layout */
+/* Grid for Main Body Layout */
 .main-content-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr; /* Articles take 3 parts, sidebar 1 */
-    gap: 3rem; /* Spacing between main content and sidebar */
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
 }
 
-/* Grid 3: Article Layout */
+/* Article Layout Grid */
 .article-grid {
     display: grid;
-    grid-template-columns: 140px 1fr; /* Date/Details on left, content on right */
+    grid-template-columns: 140px 1fr;
     gap: 1.5rem;
-    margin-bottom: 3rem; /* Spacing between articles */
-    border-bottom: 1px solid #eee; /* Light separator between articles */
-    padding-bottom: 3rem; /* Padding before separator */
+    margin-bottom: 3rem; /* UPDATED: Added space between articles */
 }
-.article-grid:last-of-type {
-    border-bottom: none; /* No separator for the last article */
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
 
 .article-details {
-    text-align: right; /* Right-align text as in image */
-    font-size: 0.95rem; /* Slightly smaller font for details */
-    padding-right: 1rem; /* Space before content grid line */
+    text-align: right;
+    font-size: 0.95rem;
+    padding-right: 1.5rem; /* NEW: Added spacing */
+    border-right: 1px solid #ccc; /* NEW: Added right border */
+    line-height: 1.4; /* NEW: Reduced space between lines */
 }
 
 .article-details time {
     display: block;
-    font-size: 1rem; /* Specific font size for date */
-    font-weight: normal;
-    color: var(--color-dark); /* Date is dark in image */
-    margin-bottom: 0.3rem; /* Space below date */
-}
-
-.article-details .age-range,
-.article-details .category {
-    display: block;
-    margin-bottom: 0.3rem; /* Space below age range and category */
-    color: #555; /* Slightly lighter color for these details */
+    font-size: 1.1rem; /* NEW: Increased date font size */
+    font-weight: bold; /* NEW: Made date bold to stand out */
+    color: var(--color-dark);
+    margin-bottom: 0.3rem;
 }
 
 .article-content h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.7rem; /* Specific size for article titles */
+    margin-top: 0; /* NEW: Aligned title with date */
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
     line-height: 1.2;
-    color: var(--color-dark); /* Article titles are dark, not red, in the image */
-    text-underline-offset: 3px; /* Space between text and underline */
+    color: var(--color-dark);
+}
+
+.article-content img {
+    margin: 0 auto 1rem; /* NEW: Centered image and added bottom margin */
 }
 
 .article-content p {
-    margin-top: 0.8rem;
-    margin-bottom: 0;
-    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
-.article-content .read-more {
-    color: var(--color-red); /* Read More link is red */
+.read-more {
+    color: var(--color-red);
     font-weight: bold;
-    text-decoration: underline; /* Underlined */
-    text-underline-offset: 2px;
-}
-.article-content .read-more:hover {
-    opacity: 0.8;
 }
 
-/* Star Ratings */
 .stars {
-    display: flex;
-    justify-content: flex-end; /* Align stars to the right */
-    margin-top: 0.5rem; /* Space above stars */
-}
-.star {
-    width: 14px; /* Size of star */
-    height: 14px;
-    background-color: #ccc; /* Unfilled star color */
-    margin-left: 2px;
-    clip-path: polygon(
-        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-    ); /* Star shape */
-}
-.star.filled {
-    background-color: var(--color-gold); /* Filled star color */
+    margin-top: 0.5rem;
 }
 
 /* Filter Sidebar */
 .filter-sidebar {
     padding: 1rem;
-    border: 1px solid var(--color-gold); /* Gold border for sidebar */
+    border: 1px solid var(--color-gold);
     height: fit-content;
-    font-family: var(--font-headline); /* Sidebar heading in headline font */
+    font-family: var(--font-headline);
 }
 .filter-sidebar h3 {
     margin-top: 0;
     font-size: 1.2rem;
-    color: var(--color-dark); /* Dark color for sidebar heading */
+    color: var(--color-dark);
 }
-
 
 /* Responsive Design */
 @media (max-width: 800px) {
@@ -230,39 +195,33 @@ img {
     }
 
     .main-nav ul {
-        grid-template-columns: repeat(3, 1fr); /* Evenly distribute nav items */
+        grid-template-columns: repeat(3, 1fr);
         justify-items: center;
-        gap: 0; /* Remove gap for smaller screens */
-    }
-    .main-nav ul li:first-child {
-        display: none; /* Keep hidden */
+        gap: 0;
     }
 
     .main-content-grid {
-        grid-template-columns: 1fr; /* Stack main content and sidebar */
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .article-grid {
-        grid-template-columns: 1fr; /* Stack article details and content */
+        grid-template-columns: 1fr;
         gap: 1rem;
+        border-bottom: 1px solid #eee;
         padding-bottom: 2rem;
+    }
+    
+    .article-grid:last-of-type {
+        border-bottom: none;
     }
 
     .article-details {
-        text-align: left; /* Align left on mobile */
+        text-align: left;
         padding-right: 0;
         border-right: none;
-        border-bottom: 1px solid #eee; /* Separator below details on mobile */
+        border-bottom: 1px solid #eee;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
     }
-    .stars {
-        justify-content: flex-start; /* Align stars left on mobile */
-    }
-
-    .filter-sidebar {
-        margin-top: 2rem; /* Add space above sidebar when stacked */
-    }
 }
-

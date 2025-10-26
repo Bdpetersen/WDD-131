@@ -1,3 +1,5 @@
+// WDD 131 • blog.js
+
 const articles = [
 	{
 		id: 1,
@@ -23,5 +25,53 @@ const articles = [
 		ages: '12-16',
 		genre: 'Fantasy',
 		stars: '⭐⭐⭐⭐'
-	}
-]
+	},
+    {
+        id: 3,
+        title: "Belgariad Book One: Pawn of Prophecy",
+        date: "Feb 12, 2022",
+        description:
+        "A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
+        imgSrc:
+        "https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+        imgAlt: "Book cover for Pawn of Prophecy",
+        ages: "12-16",
+        genre: "Fantasy",
+        stars: "⭐⭐⭐⭐⭐"
+    }
+];
+
+
+// Get a reference to the <section> with the class "articles"
+const articlesSection = document.querySelector('.articles');
+
+// Loop through the articles array
+articles.forEach(article => {
+    // 1. Create a new <article> element
+    const articleElement = document.createElement('article');
+    articleElement.classList.add('article-grid');
+
+    // 2. Create the HTML content using a template literal
+    const articleHTML = `
+        <div class="article-details">
+            <time datetime="${article.date}">${article.date}</time>
+            <span class="age-range">${article.ages}</span>
+            <span class="category">${article.genre}</span>
+            <div class="stars" aria-label="Rating: ${article.stars.length} out of 5 stars">
+                ${article.stars}
+            </div>
+        </div>
+        <div class="article-content">
+            <h3>${article.title}</h3>
+            <img src="${article.imgSrc}" alt="${article.imgAlt}">
+            <p>${article.description}</p>
+            <a href="#" class="read-more">Read More...</a>
+        </div>
+    `;
+
+    // 3. Set the innerHTML of the new <article> element
+    articleElement.innerHTML = articleHTML;
+
+    // 4. Append the new article to the articles section
+    articlesSection.appendChild(articleElement);
+});
