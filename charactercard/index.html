@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Card - Snortleblat</title>
+    <meta name="description" content="A character card for the Swamp Beast Diplomat.">
+    <link rel="stylesheet" href="main.css">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Snortleblat - Swamp Beast Diplomat">
+    <meta property="og:description" content="A character card for the Swamp Beast Diplomat.">
+    <meta property="og:url" content="https://yourusername.github.io/wdd131/charactercard"> 
+    <meta property="og:image" content="https://yourURLofSocialPreviewImageHere.png"> 
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Snortleblat - Swamp Beast Diplomat">
+    <meta name="twitter:description" content="A character card for the Swamp Beast Diplomat.">
+    <meta name="twitter:image" content="https://yourURLofSocialPreviewImageHere.png"> 
+</head>
+<body>
+    <div class="card">
+        <img class="image" src="snortleblat.webp" alt="Swamp Beast Diplomat">
+        <h2 class="name" id="character-name"></h2>
+
+        <div class="stats">
+            <p>Class: <span id="character-class"></span></p>
+            <p>Level: <span id="character-level"></span></p>
+            <p>Health: <span id="character-health"></span></p>
+        </div>
+
+        <div class="buttons">
+            <button id="attack-button">ATTACK (-20 Health)</button>
+            <button id="level-up-button">LEVEL UP (+1 Level)</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
