@@ -1,24 +1,102 @@
-
 * {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-font-size: 20px;
-max-width: 1280px;
-margin: auto;
-padding: 1em;
+    font-size: 20px;
+    max-width: 1280px;
+    margin: auto;
+    padding: 1em;
 }
 
 img {
-max-width: 100%;
+    max-width: 100%;
+}
+
+/* --- Navigation Styling --- */
+header {
+    display: flex; /* Enable flex container for header content */
+    flex-direction: column; /* Stack h1 and nav vertically in mobile */
 }
 
 .main-nav {
-list-style-type: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Enable flex container for nav items */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    gap: 1em; /* Space between links */
 }
 
-hr{
-margin-top: 50px;
+.main-nav a {
+    text-decoration: none;
+    color: black;
 }
-              
+
+hr {
+    margin-top: 50px;
+}
+
+/* --- Mobile (Default) Styles --- */
+
+/* Media Card (The single large one) */
+.media-card-container .media-card {
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically on mobile */
+    align-items: center; /* Center content horizontally */
+}
+
+.media-card-container .media-card-content {
+    padding: 0 1em; /* Add some padding around the content */
+}
+
+/* Gallery Card (The multiple smaller ones) */
+.gallery {
+    display: flex;
+    flex-direction: column; /* Stack gallery cards vertically on mobile */
+    gap: 20px; /* Space between each gallery card */
+}
+
+.gallery .media-card {
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically on mobile */
+}
+
+/* --- Larger Device Styles (Min-width: 700px) --- */
+@media screen and (min-width: 700px) {
+    /* Header/Navigation Layout */
+    header {
+        flex-direction: row; /* Layout h1 and nav horizontally */
+        justify-content: space-between; /* Push h1 to left, nav to right */
+        align-items: center; /* Vertically align items in the center */
+    }
+
+    /* Media Card Layout (The single large one) */
+    .media-card-container .media-card {
+        flex-direction: row; /* Layout image and content horizontally */
+        align-items: flex-start; /* Align content to the top */
+    }
+
+    .media-card-container .media-card div:first-child { /* Image container */
+        flex: 1; /* Take up 1/3 of the space */
+        min-width: 33%; /* Ensure it has a fixed minimum width */
+    }
+    
+    .media-card-container .media-card-content {
+        flex: 2; /* Take up 2/3 of the space */
+        padding-left: 1.5em; /* Add space between image and text */
+    }
+
+    /* Gallery Card Layout (The multiple smaller ones) */
+    .gallery {
+        flex-direction: row; /* Layout gallery cards horizontally */
+        flex-wrap: wrap; /* Allow cards to wrap to the next line */
+        justify-content: space-between; /* Space out the cards */
+    }
+
+    .gallery .media-card {
+        /* Make each card take up slightly less than 50% to allow for space/gap */
+        flex-basis: 48%; 
+        flex-direction: column; /* Stack image and content vertically inside the card */
+    }
+}
