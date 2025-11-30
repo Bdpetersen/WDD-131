@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Site Plan</title>
+        <link type="text/css" rel="stylesheet" href="styles/site-plan.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Nature's Gallery Site Plan</h1>
+            <h2>Brandon Petersen</h2>
+            <h2>WDD 131</h2>
+            </header>
+        <main>
+            <hr>
+            <h2>Overview</h2>
+            <h3>Purpose</h3>
+            <p>
+                The purpose of this website is to create a professional online portfolio to showcase my photography work. 
+                It will serve as a central hub where I can display high-quality images taken with my Canon camera, allowing me to share my hobby 
+                with friends and family, and demonstrate my creative skills to potential employers.
+            </p>
+            <h3>Audience</h3>
+            <p>
+                The primary audience includes photography enthusiasts, friends, family, and potential clients looking for a photographer. 
+                They will access the site from both desktop computers and mobile devices, so the site must be fully responsive. 
+                They are looking for a clean, visual-heavy experience where they can easily filter photos by category (e.g., Nature vs. Urban).
+            </p>
+            <h3>Dynamic elements</h3>
+            <p>
+                I will use JavaScript to dynamically generate the photo gallery on the secondary page.
+                <br><br>
+                1. <strong>ES Modules:</strong> I will store my photo data in a separate file (<code>photos.js</code>) and import it into my main script.
+                <br>
+                2. <strong>Objects & Arrays:</strong> My data will be an array of objects. Each object will represent a photo with properties like <code>id</code>, <code>category</code>, <code>src</code>, and <code>description</code>.
+                <br>
+                3. <strong>Array Methods:</strong> I will use <code>.map()</code> to generate the HTML cards for the gallery and <code>.filter()</code> to let users sort images by category buttons.
+            </p>
+            <hr>
+            <h2>Branding</h2>
+            <h3>Website Logo</h3>
+            <img src="images/logo.png" alt="Logo image" width="600px">
+            <hr>
+            <h2>Style Guide</h2>
+
+            <h3>Color Palette</h3>
+            Palette URL:
+            <a href="https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c" target="_blank">https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c</a>
+
+            <table class="colors">
+                <tbody>
+                    <tr>
+                        <th>Primary</th>
+                        <th>Secondary</th>
+                        <th>Accent 1</th>
+                        <th>Accent 2</th>
+                    </tr>
+                    <tr>
+                        <td class="primary" style="background-color: #396E94; color: white;">#396E94</td>
+                        <td class="secondary" style="background-color: #E7C24F;">#E7C24F</td>
+                        <td class="accent1" style="background-color: #A43312; color: white;">#A43312</td>
+                        <td class="accent2" style="background-color: #381D2A; color: white;">#381D2A</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Typography</h3>
+            <h4>
+                Heading Font: "Roboto", sans-serif
+                </h4>
+            <h4>
+                Paragraph Font: "Open Sans", sans-serif
+                </h4>
+            <h3>Normal paragraph example</h3>
+            <p>
+                Photography is the art of capturing light. This website is designed to let the images speak for themselves.
+                By using a clean font like Open Sans, we ensure that the text supports the visuals rather than distracting from them.
+                Each gallery item will feature a short description explaining the setting and equipment used.
+            </p>
+            <h3>Colored paragraph example</h3>
+            <p class="colored">
+                This is how text will look when placed over our primary color background. 
+                It is important to ensure high contrast for accessibility, making sure all visitors can read the descriptions of the photos easily.
+            </p>
+
+            <h3>Navigation</h3>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </nav>
+            <hr>
+
+            <h2>Content</h2>
+            <h3>Home page</h3>
+            <p>
+                The home page will be simple and inviting. It will feature:
+                <br>1. A "Hero" image (a large, high-quality banner photo) that immediately sets the tone.
+                <br>2. A brief introduction about me and my passion for photography.
+                <br>3. A "Call to Action" button that says "View Gallery" to direct users to the main content.
+            </p>
+            
+            <h3>Gallery Page (Page 2)</h3>
+            <p>
+                This is the main child page. It will contain:
+                <br>1. Filter buttons at the top (e.g., "Nature", "Urban", "Portraits", "All").
+                <br>2. A responsive grid of image cards.
+                <br>3. Each card will have the photo, a title, and a small description.
+                <br>4. This content will be loaded via JavaScript modules.
+            </p>
+            <div id="wireframe">
+                <h2>Wireframes</h2>
+                <h3>Home</h3>
+                <p>
+                    The Home page features a standard navigation bar, a large hero image, and a footer with social links.
+                </p>
+                <img src="images/Screenshot 2025-11-29 175321.png" alt="home page wireframe">
+
+                <h3>Gallery</h3>
+                <p>
+                    The Gallery page features the filter buttons prominently at the top, followed by a 3-column grid layout for the photos.
+                </p>
+                <img src="images/Screenshot 2025-11-29 175404.png" alt="page 2 wireframe">
+            </div>
+        </main>
+    </body>
+</html>
