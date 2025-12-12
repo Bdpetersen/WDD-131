@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Gallery | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Nature's Gallery Logo" width="150">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Photo Gallery</h2>
+        
+        <div class="filters">
+            <button id="all">All</button>
+            <button id="nature">Nature</button>
+            <button id="urban">Urban</button>
+            <button id="portraits">Portraits</button>
+        </div>
+
+        <section id="gallery-grid">
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nature's Gallery - Brandon Petersen</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+    <div id="image-modal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Enlarged view">
+        <div id="modal-caption"></div>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
